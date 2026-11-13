@@ -8,4 +8,10 @@ public class NameFormatter {
         return lastName + ", " + firstName;
     }
 
+    private static boolean hasText(String text) {
+        if (text == null) {
+            return false;
+        }
+        return !text.trim().isEmpty();
+    }
 }
