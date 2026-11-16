@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NameFormatterTest {
@@ -10,6 +11,15 @@ public class NameFormatterTest {
         String expected = "Johnson, Mel";
 
         String actual = NameFormatter.format("Mel", "Johnson");
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void format_should_includeAllFiveParts() {
+        String expected = "Johnson, Dr. Mel B, PhD";
+
+        String actual = NameFormatter.format("Dr.", "Mel", "B", "Johnson", "PhD");
 
         assertEquals(expected, actual);
     }
